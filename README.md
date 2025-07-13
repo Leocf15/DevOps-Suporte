@@ -1,57 +1,124 @@
+# 🚀 Teste Técnico DevOps/Suporte - Estrutura Completa
 
-# Meu Projeto
+**Repositório:** https://github.com/Leocf15/DevOps-Suporte
+ 
+**Autor:** Leonardo CF
 
-Este é meu README.
-# 🚀 Teste Técnico DevOps/Suporte
+## 📁 Estrutura dos Arquivos
 
-## 📋 Sobre o Projeto
+Baseado na imagem fornecida, aqui estão todos os arquivos organizados conforme a estrutura do seu repositório:
 
-Este repositório contém a solução completa para o teste técnico de DevOps/Suporte, incluindo:
+### 📂 `.github/workflows/`
+- **`ci-cd.yml`** - Pipeline CI/CD com GitHub Actions
 
-- **Aplicação Node.js** com Express
-- **Banco PostgreSQL** com dados de exemplo
-- **Nginx** como proxy reverso
-- **Scripts de automação** para backup
-- **Pipeline CI/CD** com GitHub Actions
-- **Consultas SQL** para análise de dados
+### 📂 `pilha-de-encaixe/` (docker-stack)
 
-## 🏗️ Arquitetura
+#### 📂 `app/`
+- **`Dockerfile`** - Container da aplicação Node.js
+- **`package.json`** - Dependências e scripts Node.js  
+- **`server.js`** - Servidor Express com API REST
 
-┌───────────────┐ ┌───────────────┐ ┌───────────────┐
-│ Nginx │───▶│ Node.js App │───▶│ PostgreSQL │
-│ (Proxy :80) │ │ (:3000) │ │ (:5432) │
-└───────────────┘ └───────────────┘ └───────────────┘
+#### 📂 `nginx/`
+- **`nginx.conf`** - Configuração do proxy reverso + logs Wazuh
 
+#### 📂 `postgres/`
+- **`init.sql`** - Schema do banco + dados de exemplo
 
-## 🚀 Como Executar
+#### Arquivo raiz:
+- **`docker-compose.yml`** - Orquestração completa dos serviços
 
-### Pré-requisitos
-- Docker 20.10+
-- Docker Compose 2.0+
-- Git
+### 📂 `documentos/`
+- **`respostas-teoricas.md`** - Todas as respostas teóricas do teste
 
-### Execução Rápida
+### 📂 `roteiros/` (scripts)
+- **`docker-backup.sh`** - Script de backup Docker + SCP
+
+### 📂 `sql/`
+- **`consultas.sql`** - Consulta principal + queries adicionais
+
+### Arquivo raiz:
+- **`LEIA-ME.md`** - Este arquivo (README em português)
+
+## 🎯 Como Usar Esta Estrutura
+
+### 1. **Copiar para seu repositório GitHub:**
 
 ```bash
-# 1. Clonar repositório
-git clone <URL_DO_SEU_REPOSITORIO>
-cd teste-tecnico-devops
+# Clonar seu repositório
+git clone https://github.com/Leocf15/DevOps-Suporte.git
+cd DevOps-Suporte
 
-# 2. Executar aplicação
-cd docker-stack
+# Criar estrutura de pastas
+mkdir -p .github/workflows
+mkdir -p pilha-de-encaixe/{app,nginx,postgres}
+mkdir -p documentos
+mkdir -p roteiros  
+mkdir -p sql
+
+# Copiar cada arquivo para sua pasta correspondente
+# (use os arquivos que criei na pasta estrutura_completa)
+```
+
+### 2. **Organização dos arquivos:**
+
+```
+DevOps-Suporte/
+├── .github/workflows/ci-cd.yml
+├── pilha-de-encaixe/
+│   ├── app/
+│   │   ├── Dockerfile
+│   │   ├── package.json
+│   │   └── server.js
+│   ├── nginx/
+│   │   └── nginx.conf
+│   ├── postgres/
+│   │   └── init.sql
+│   └── docker-compose.yml
+├── documentos/
+│   └── respostas-teoricas.md
+├── roteiros/
+│   └── docker-backup.sh
+├── sql/
+│   └── consultas.sql
+└── LEIA-ME.md
+```
+
+### 3. **Executar a aplicação:**
+
+```bash
+cd pilha-de-encaixe
 docker-compose up -d
+```
 
-# 3. Aguardar inicialização (30-60 segundos)
-sleep 60
+### 4. **Testar funcionamento:**
 
-# 4. Testar aplicação
+```bash
 curl http://localhost/health
+curl http://localhost/api/status
+curl http://localhost/api/db-test
+```
 
-# Verificar status dos containers
-docker-compose ps
+## ✅ Checklist de Entrega
 
-# Logs da aplicação
-docker-compose logs app
+- [x] **Dockerfile** para aplicação Node.js
+- [x] **Docker Compose** com Node.js + PostgreSQL + Nginx  
+- [x] **Script Shell** para backup Docker + SCP
+- [x] **Configuração Wazuh** para monitoramento Nginx
+- [x] **GitHub Actions** com CI/CD pipeline
+- [x] **Consulta SQL** para tickets por usuário
+- [x] **Respostas teóricas** completas
+- [x] **Estrutura organizada** conforme solicitado
 
-# Logs do banco
-docker-compose logs postgres
+## 🚀 Próximos Passos
+
+1. **Copie os arquivos** para as pastas corretas no seu repositório
+2. **Faça commit e push** de todos os arquivos
+3. **Teste localmente** que tudo funciona
+4. **Gere o PDF** com as respostas teóricas
+5. **Entregue** o link do repositório + PDF
+
+## 📞 Suporte
+
+Se precisar de ajuda com algum arquivo específico, me avise!
+
+**Repositório:** https://github.com/Leocf15/DevOps-Suporte
