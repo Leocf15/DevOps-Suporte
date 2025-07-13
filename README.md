@@ -116,9 +116,3 @@ curl http://localhost/api/db-test
 3. **Teste localmente** que tudo funciona
 4. **Gere o PDF** com as respostas teóricas
 5. **Entregue** o link do repositório + PDF
-
-## 📞 Suporte
-
-Se precisar de ajuda com algum arquivo específico, me avise!
-
-**Repositório:** https://github.com/Leocf15/DevOps-Suporte
