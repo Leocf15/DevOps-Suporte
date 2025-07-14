@@ -109,10 +109,4 @@ curl http://localhost/api/db-test
 - [x] **Respostas teóricas** completas
 - [x] **Estrutura organizada** conforme solicitado
 
-## 🚀 Próximos Passos
 
-1. **Copie os arquivos** para as pastas corretas no seu repositório
-2. **Faça commit e push** de todos os arquivos
-3. **Teste localmente** que tudo funciona
-4. **Gere o PDF** com as respostas teóricas
-5. **Entregue** o link do repositório + PDF
